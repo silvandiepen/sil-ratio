@@ -1,4 +1,5 @@
-export Vue.directive('ratio', {
+<script>
+export default {
 	bind: function(el, binding) {
 		function setStyle() {
 			let check = {
@@ -64,4 +65,5 @@ export Vue.directive('ratio', {
 			el.classList.remove('ratio-hide');
 		}
 	}
-});
+};
+</script>

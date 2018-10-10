@@ -7,7 +7,7 @@ import minimist from 'minimist';
 const argv = minimist(process.argv.slice(2));
 
 const config = {
-	input: 'src/sil-ratio.js',
+	input: 'src/index.js',
 	output: {
 		name: 'silRatio',
 		exports: 'named'
