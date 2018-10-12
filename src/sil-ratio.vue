@@ -1,7 +1,15 @@
 <script>
 export default {
 	bind: function(el, binding) {
-		function setStyle() {
+		this.setStyle(el);
+		if (!process.server) {
+			window.addEventListener('resize', function() {
+				this.setStyle(el);
+			});
+		}
+	},
+	methods: {
+		setStyle(el) {
 			let check = {
 				small: 0,
 				medium: 750,
@@ -29,14 +37,12 @@ export default {
 				el.classList.remove('ratio-hide');
 			}
 		}
-		if (!process.server) {
-			window.addEventListener('resize', function() {
-				setStyle();
-			});
-		}
+	},
+	update: function(el, binding, vnode) {
+		this.setStyle(el);
 	},
 	inserted: function(el, binding) {
-		//added this functiopn twice cause I couldn't call setStyle function in a method, maybe fix later
+		//added this function twice cause I couldn't call setStyle function in a method, maybe fix later
 		//inserted function will call when dom is entered in the website, maybe fix later?
 		let check = {
 			small: 0,
