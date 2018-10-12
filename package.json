@@ -1,6 +1,6 @@
 {
 	"name": "@sil/ratio",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"main": "dist/sil-ratio.umd.js",
 	"module": "dist/sil-ratio.esm.js",
 	"unpkg": "dist/sil-ratio.min.js",
